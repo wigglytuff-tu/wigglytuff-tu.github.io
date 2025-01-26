@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Purvam's Homepage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Purvam">
+        <meta name="description" content="Purvam's Homepage">
+        <!-- <meta name="google-site-verification" content="wGTO-1kOrvXIfMt0ulX7DQtDQl5YcSvMQO8eyZYUmLM" /> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-light">
+            <div class="container-fluid">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pubs">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#service">Academic Service</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class='container'>
+            <span class="anchor" id="home"></span>
+            <div class="section-gap" id="home"></div>
+            
+            <div class="row">
+                <div class="col-4 col-md-2">
+                    <img src="imgs/profile.jpg" style="width: 110%; height: 92%; display: block;">
+                </div>
+                <div class="col-6 px-1 col-md-10" style="padding-left: 20px;">
+                    <h3>Purvam Jain</h3>
+                    <p>
+                        <small>Email: purvamjain1221 at gmail dot com</small><br>
+                        <a href="https://scholar.google.com/citations?hl=en&user=DPu922sAAAAJ">Google Scholar</a> |
+                        <a href="https://www.linkedin.com/in/purvam-jain-460b91114/">LinkedIn</a> |
+                        <a href="https://github.com/wigglytuff-tu">GitHub</a>
+                    </p>
+                    <p style="font-size: calc(9px + .3vw); margin-top: -12px;">
+                       Hi 👋! I am Purvam Jain, a final-year Dual Degree (B.Tech + M.Tech) student in the Electrical Engineering Department at IIT Madras, with minors 
+                        in Artificial Intelligence and Machine Learning. Currently, I am fortunate to be working under the guidance of <a href="https://scholar.google.com/citations?user=DV8z8DYAAAAJ">Prof Mitesh Khapra</a> 
+                        at <a href="https://ai4bharat.iitm.ac.in/">AI4Bharat</a>. For my Bachelor's Thesis, I worked with <a href="https://scholar.google.co.in/citations?user=cZBq_9MAAAAJ&hl=en">Prof Kaushik Mitra</a>
+                        at the Computational Imaging Lab and <a href="https://scholar.google.com/citations?user=pEMEFwQAAAAJ">Prof Praneeth Chakravarthula</a> (UNC Chapel Hill)
+                        on lensless cameras for gaze tracking. I have also had the opportunity to work with <a href="https://scholar.google.co.in/citations?user=nGUg9VUAAAAJ&hl=en">Prof Narayanaswamy N S</a> 
+                        at the Logistics Innovation Lab. 
+                        My current research interest lies at the intersection of Natural Language Processing and Computer Vision, specifically developing multimodal intelligent applications.
+                    </p>
+                </div>
+            </div>
+            
+            <span class="anchor" id="pubs"></span>
+            <div class="section-gap" id="pubs"></div>
+            <h3>Publications</h3>
+            <hr>
+            <div class="row align-items-center" onmouseout="one2345_stop()" onmouseover="one2345_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <div class="two" id='one2345'>
+                            <img src="imgs/lensless1.PNG">
+                        </div>
+                        <img src="imgs/lensless2.PNG">
+                    </div>
+                    <script type="text/javascript">
+                        function one2345_start() {
+                            document.getElementById('one2345').style.opacity = "1";
+                        }
+                        
+                        function one2345_stop() {
+                            document.getElementById('one2345').style.opacity = "0";
+                        }
+                        one2345_stop()
+                    </script>
+                </div>
+                <div class="col-sm-8">
+                    <b>FlatTrack: Eye-tracking with ultra-thin lensless cameras</b>
+                    <br>
+                    <b>Purvam Jain</b>,&nbsp;
+                    <a href="https://www.linkedin.com/in/althaf-nazar-b7aba41b8/">Althaf M. Nazar</a>,&nbsp;
+                    <a href="https://siddiquesalman.github.io/">Salman S. Khan</a>&nbsp;
+                    <a href="https://scholar.google.co.in/citations?user=cZBq_9MAAAAJ&hl=en">Kaushik Mitra</a>&nbsp;
+                    <a href="https://scholar.google.com/citations?user=pEMEFwQAAAAJ">Prof Praneeth Chakravarthula</a>&nbsp;<br> 
+                    GMCV@WACV 2025&nbsp;<br>
+                    <!-- <a href="https://paintscene4d.github.io/">[webpage]</a>&nbsp; -->
+                    <a href="https://drive.google.com/file/d/1cHah-KW7jqPsh6kk83g-uRK5BN9-w4Iz/view?usp=sharing">[paper]</a>&nbsp;
+                    <!-- <a href="https://vinayak-vg.github.io/GAURA/">[webpage]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/GAURA/">[code]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[demo]</a>&nbsp; -->
+                    <!-- <a href="#">[bib]</a>&nbsp; -->
+                    <!-- <img src="https://img.shields.io/github/stars/One-2-3-45/One-2-3-45?style=social&logo=github" style="width: 90px;"> -->
+                </div>
+            </div>
+            <br>
+
+            <div class="row align-items-center" onmouseout="one2345_stop()" onmouseover="one2345_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <!-- <div class="two" id='one2345'>
+                            <video width=100% height=100% muted autoplay loop>
+                                <source src="imgs/photonsplat.mp4" type="video/mp4">
+                            </video>
+                        </div> -->
+                        <img src="imgs/regains.png">
+                    </div>
+                    <!-- <script type="text/javascript">
+                        function one2345_start() {
+                            document.getElementById('one2345').style.opacity = "1";
+                        }
+                        
+                        function one2345_stop() {
+                            document.getElementById('one2345').style.opacity = "0";
+                        }
+                        one2345_stop()
+                    </script> -->
+                </div>
+                <div class="col-sm-8">
+                    <b>RE-GAINS & EnChAnT: Intelligent Tool Manipulation Systems For Enhanced Query Responses</b>
+                    <br>
+                    <a href="https://www.linkedin.com/in/sahil-girhepuje/">Sahil Girhepuje</a>,&nbsp;
+                    <a href="https://www.linkedin.com/in/siva-sankar-sajeev-737363238/">Siva Sankar Sajeev</a>,&nbsp;
+                    <b>Purvam Jain</b>,&nbsp;
+                    ...et al<br> 
+                    <i>Under Review</i>&nbsp;<br>
+                    <a href="https://arxiv.org/abs/2401.15724">[Paper]</a>&nbsp;
+                    <!-- <a href="https://vinayak-vg.github.io/GAURA/">[webpage]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/GAURA/">[code]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[demo]</a>&nbsp; -->
+                    <!-- <a href="#">[bib]</a>&nbsp; -->
+                    <!-- <img src="https://img.shields.io/github/stars/One-2-3-45/One-2-3-45?style=social&logo=github" style="width: 90px;"> -->
+                </div>
+            </div>
+            <br>
+
+
+            <!-- <div class="row align-items-center" onmouseout="one2345_stop()" onmouseover="one2345_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <div class="two" id='one2345'>
+                            <video width=100% height=100% muted autoplay loop>
+                                <source src="imgs/ganesh-teaser.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <img src="imgs/ganesh-teaser.png">
+                    </div>
+                    <script type="text/javascript">
+                        function one2345_start() {
+                            document.getElementById('one2345').style.opacity = "1";
+                        }
+                        
+                        function one2345_stop() {
+                            document.getElementById('one2345').style.opacity = "0";
+                        }
+                        one2345_stop()
+                    </script>
+                </div>
+                <div class="col-sm-8">
+                    <b>GANESH: Generalizable NeRFs for Lensless Imaging</b>
+                    <br>
+                    <a href="https://rakesh-123-cryp.github.io/Rakesh.github.io/">Rakesh Raj*</a>,&nbsp;
+                    <a href="https://www.linkedin.com/in/akshat-kaimal">Akshat Kaimal*</a>,&nbsp;
+                    <a href="https://www.linkedin.com/in/badhri7897">Badhri Narayanan KV*</a>,&nbsp;
+                    <b>Vinayak Gupta</b>,&nbsp;
+                    <a href="https://rohitchoudharymanth.github.io/">Rohit Chowdhary</a>,&nbsp;
+                    <a href="https://www.snuchennai.edu.in/faculty/dr-s-chandrakala/">Chandrakala S</a>,&nbsp;
+                    <a href="https://www.ee.iitm.ac.in/kmitra/">Kaushik Mitra</a>,&nbsp;<br> 
+                    WACV 2025.&nbsp;<br>
+                    <a href="https://rakesh-123-cryp.github.io/Rakesh.github.io/static/index.html">[webpage]</a>&nbsp;
+                    <a href="https://arxiv.org/abs/2411.04810">[paper]</a>&nbsp;
+                    <a href="https://github.com/Rakesh-123-cryp/GNT-For_Lensless_Images">[code]</a>&nbsp;
+                     <a href="https://vinayak-vg.github.io/GAURA/">[webpage]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/GAURA/">[code]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[demo]</a>&nbsp; -->
+                    <!-- <a href="#">[bib]</a>&nbsp; -->
+                    <!-- <img src="https://img.shields.io/github/stars/One-2-3-45/One-2-3-45?style=social&logo=github" style="width: 90px;"> -->
+                <!-- </div>
+            </div>
+            <br>
+        
+            <div class="row align-items-center" onmouseout="one2345_stop()" onmouseover="one2345_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <div class="two" id='one2345'>
+                            <video width=100% height=100% muted autoplay loop>
+                                <source src="imgs/gaura_anim_new.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <img src="imgs/teaser.png">
+                    </div>
+                    <script type="text/javascript">
+                        function one2345_start() {
+                            document.getElementById('one2345').style.opacity = "1";
+                        }
+                        
+                        function one2345_stop() {
+                            document.getElementById('one2345').style.opacity = "0";
+                        }
+                        one2345_stop()
+                    </script>
+                </div>
+                <div class="col-sm-8">
+                    <b>GAURA: Generalizable Approach for Unified Restoration and Rendering of Arbitrary Views</b>
+                    <br>
+                    <b>Vinayak Gupta*</b>,&nbsp;
+                    <a href="https://www.linkedin.com/in/girish-rongali-505a94148/">Girish Rongali*</a>,&nbsp;
+                    <a href="https://mukundvarmat.github.io/">Mukund Varma T*</a>,&nbsp;
+                    <a href="https://ayushtewari.com/">Ayush Tewari</a>,&nbsp;
+                    <a href="https://www.ee.iitm.ac.in/kmitra/">Kaushik Mitra</a>,&nbsp;<br>
+                    ECCV 2024.&nbsp;<br>
+                    <a href="https://vinayak-vg.github.io/GAURA/">[webpage]</a>&nbsp;
+                    <a href="https://arxiv.org/abs/2407.08221">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/GAURA/">[code]</a>&nbsp;
+                    <a href="https://vinayak-vg.github.io/GAURA/">[demo]</a>&nbsp; -->
+                    <!-- <a href="#">[bib]</a>&nbsp; -->
+                    <!-- <img src="https://img.shields.io/github/stars/One-2-3-45/One-2-3-45?style=social&logo=github" style="width: 90px;"> -->
+                <!-- </div>
+            </div>
+            <br>
+            <div class="row align-items-center" onmouseout="one2345_stop()" onmouseover="one2345_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <div class="two" id='one2345'>
+                            <video width=100% height=100% muted autoplay loop>
+                                <source src="gsn_anim.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <img src="flower_seg.png">
+                    </div>
+                    <script type="text/javascript">
+                        function one2345_start() {
+                            document.getElementById('one2345').style.opacity = "1";
+                        }
+                        
+                        function one2345_stop() {
+                            document.getElementById('one2345').style.opacity = "0";
+                        }
+                        one2345_stop()
+                    </script>
+                </div>
+                <div class="col-sm-8">
+                    <b>GSN: Generalisable Segmentation of Neural Radiance Fields</b>
+                    <br>
+                    <b>Vinayak Gupta</b>,&nbsp;
+                    <a href="https://rahulgoel.xyz/">Rahul Goel</a>,&nbsp;
+                    <a href="https://dhawal1939.github.io/">Dhawal Sirikonda</a>,&nbsp;
+                    <a href="https://scholar.google.co.in/citations?hl=en&user=3HKjt_IAAAAJ&view_op=list_works&sortby=pubdate">P J Narayanan</a>,&nbsp;<br>
+                    AAAI 2024.&nbsp;<br>
+                    <a href="https://vinayak-vg.github.io/GSN/">[webpage]</a>&nbsp;
+                    <a href="https://arxiv.org/abs/2402.04632">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/GSN">[code]</a>&nbsp; -->
+                    <!-- <a href="https://vinayak-vg.github.io/GSN/">[demo]</a>&nbsp; -->
+                    <!-- <a href="#">[bib]</a>&nbsp; -->
+                    <!-- <img src="https://img.shields.io/github/stars/One-2-3-45/One-2-3-45?style=social&logo=github" style="width: 90px;"> -->
+                <!-- </div>
+            </div>
+            <br>
+            <div class="row align-items-center" onmouseout="u2nerf_stop()" onmouseover="u2nerf_start()">
+                <div class="col-sm-4">
+                    <div class="one">
+                        <div class="two" id='u2nerf_image'>
+                            <img src='imgs/u2nerf_after.png'>
+                        </div>
+                        <img src='imgs/u2nerf_before.png'>
+                    </div>
+                    <script type="text/javascript">
+                        function u2nerf_start() {
+                            document.getElementById('u2nerf_image').style.opacity = "1";
+                        }
+                        function u2nerf_stop() {
+                        document.getElementById('u2nerf_image').style.opacity = "0";
+                        }
+                        u2nerf_stop()
+                    </script>
+                </div>
+                <div class="col-sm-8">
+                    <b>U2NeRF: Unsupervised Underwater Image Restoration and Neural Radiance Fields</b>
+                    <br>
+                    <b>Vinayak Gupta*</b>,&nbsp;
+                    <a href="https://manoj-152.github.io/">Manoj S*</a>&nbsp;
+                    <a href="https://mukundvarmat.github.io/">Mukund Varma T*</a>&nbsp;
+                    <a href="https://www.ee.iitm.ac.in/kmitra/">Kaushik Mitra</a>&nbsp;<br>
+                    ICLR Tiny Papers 2024.&nbsp;<br>
+                    <a href="https://vinayak-vg.github.io/U2NeRF/">[webpage]</a>&nbsp;
+                    <a href="https://arxiv.org/abs/2411.16172">[paper]</a>&nbsp;
+                    <a href="https://github.com/Vinayak-VG/U2NeRF">[code]</a>&nbsp;
+                </div>
+            </div> -->
+            <br>
+            
+            <span class="anchor" id="service"></span>
+            <div class="section-gap" id="service"></div>
+            <h3>Academic Service</hf3>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <ul>
+                        <li>
+                            <b>Teaching Assistant (IIT Madras): </b><br>
+                            <ul>
+                                <li><font size="3">EE5178 Modern Computer Vision, Spring 2025.</font></li>                                
+                                <li><font size="3">EE5176 Computational Photography, Fall 2024.</font></li>
+                                <li><font size="3">CS6370 Natural Language Processing, Spring 2024.</font></li>
+<!--                                 <li><font size="3">EE5180 Introduction to Machine Learning, Spring 2023.</font></li> -->
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span class="anchor" id="about"></span>
+            <div class="section-gap" id="about"></div>
+            <h3>About Me</h3>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p>
+                        Beyond my academic pursuits, I am a nature enthusiast with a deep appreciation for plants and animals.
+                        I enjoy exploring places rich in natural beauty, such as forests, lakes, and hill stations, as well as immersing myself
+                        in history and culture by visiting historical and spiritual sites. In my free time, I find joy in creative endeavors 
+                        like arts, crafts, and origami, which allow me to unwind. Additionally, I enjoy watching 
+                        anime and reading manhwas. I am always open to discussions or collaborations in related areas—feel free to reach out to me via <a href="#home">email</a>.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col">
+                    <p style="text-align:center;font-size:small;">Template adapted from <a href="https://yinboc.github.io/">Yinbo Chen</a></p>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
