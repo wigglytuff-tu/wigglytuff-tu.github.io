@@ -571,8 +571,8 @@ section {
 }
 
 .pokemon-sprite-wrap {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   margin: 0 auto 0.75rem;
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   border-radius: 50%;
@@ -583,8 +583,8 @@ section {
 }
 
 .pokemon-sprite {
-  max-width: 96px;
-  max-height: 96px;
+  max-width: 140px;
+  max-height: 140px;
   width: auto;
   height: auto;
   object-fit: contain;
