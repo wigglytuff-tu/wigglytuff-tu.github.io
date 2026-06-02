@@ -335,6 +335,29 @@
                 I am always open to discussions or collaborations — feel free to <a href="mailto:purvamjain1221@gmail.com">reach out</a>!
             </p>
         </div>
+
+        <!-- Random Pokémon Generator -->
+        <h3 style="font-size: 1rem; color: var(--text-primary); margin-bottom: 1rem; font-weight: 600; margin-top: 2rem;">Random Pokémon Generator 🎮</h3>
+        <div class="pokemon-widget">
+            <div class="pokemon-card" id="pokemon-card">
+                <div class="pokemon-placeholder" id="pokemon-placeholder">
+                    <span style="font-size: 3rem;">?</span>
+                    <p style="margin-top: 0.5rem; color: var(--text-muted);">Click the button below!</p>
+                </div>
+                <div class="pokemon-content" id="pokemon-content" style="display: none;">
+                    <div class="pokemon-sprite-wrap">
+                        <img id="pokemon-sprite" class="pokemon-sprite" src="" alt="Pokémon sprite">
+                    </div>
+                    <h4 id="pokemon-name" class="pokemon-name"></h4>
+                    <p id="pokemon-id" class="pokemon-id"></p>
+                    <div id="pokemon-types" class="pokemon-types"></div>
+                    <div id="pokemon-stats" class="pokemon-stats"></div>
+                </div>
+            </div>
+            <button id="pokemon-btn" class="pokemon-btn" onclick="fetchRandomPokemon()">
+                ⚡ Catch a Random Pokémon!
+            </button>
+        </div>
     </div>
 </section>
 
@@ -344,6 +367,83 @@
         <p>© 2026 Purvam Jain</p>
     </div>
 </footer>
+<!-- Pokémon Generator Script -->
+<script>
+async function fetchRandomPokemon() {
+  const btn = document.getElementById('pokemon-btn');
+  const card = document.getElementById('pokemon-card');
+  const placeholder = document.getElementById('pokemon-placeholder');
+  const content = document.getElementById('pokemon-content');
+
+  btn.classList.add('loading');
+  btn.textContent = '🔄 Catching...';
+
+  try {
+    const id = Math.floor(Math.random() * 898) + 1; // Gen 1–8
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const data = await res.json();
+
+    // Sprite: prefer animated, fallback to static
+    const sprite = data.sprites.other?.showdown?.front_default
+      || data.sprites.versions?.['generation-v']?.['black-white']?.animated?.front_default
+      || data.sprites.other?.['official-artwork']?.front_default
+      || data.sprites.front_default;
+
+    document.getElementById('pokemon-sprite').src = sprite;
+    document.getElementById('pokemon-name').textContent = data.name;
+    document.getElementById('pokemon-id').textContent = `#${String(data.id).padStart(3, '0')}`;
+
+    // Types
+    const typesEl = document.getElementById('pokemon-types');
+    typesEl.innerHTML = data.types.map(t =>
+      `<span class="pokemon-type type-${t.type.name}">${t.type.name}</span>`
+    ).join('');
+
+    // Stats (show HP, ATK, DEF, SPD)
+    const statMap = { hp: 'HP', attack: 'ATK', defense: 'DEF', speed: 'SPD' };
+    const statsEl = document.getElementById('pokemon-stats');
+    statsEl.innerHTML = '';
+    data.stats.forEach(s => {
+      const label = statMap[s.stat.name];
+      if (!label) return;
+      const pct = Math.min((s.base_stat / 255) * 100, 100);
+      const row = document.createElement('div');
+      row.className = 'pokemon-stat';
+      row.innerHTML = `
+        <span class="stat-label">${label}</span>
+        <div class="stat-bar-bg"><div class="stat-bar" style="width: 0"></div></div>
+        <span class="stat-val">${s.base_stat}</span>
+      `;
+      statsEl.appendChild(row);
+    });
+
+    // Show content
+    placeholder.style.display = 'none';
+    content.style.display = 'block';
+    content.classList.remove('show');
+    void content.offsetWidth; // trigger reflow
+    content.classList.add('show');
+    card.classList.add('active');
+
+    // Animate stat bars
+    setTimeout(() => {
+      statsEl.querySelectorAll('.stat-bar').forEach((bar, i) => {
+        const stat = data.stats.filter(s => statMap[s.stat.name])[i];
+        if (stat) bar.style.width = `${Math.min((stat.base_stat / 255) * 100, 100)}%`;
+      });
+    }, 100);
+
+  } catch (err) {
+    console.error('Failed to fetch Pokémon:', err);
+    placeholder.innerHTML = '<span style="font-size: 1.5rem;">😵</span><p style="margin-top: 0.5rem; color: var(--text-muted);">Failed to catch! Try again.</p>';
+    placeholder.style.display = 'block';
+    content.style.display = 'none';
+  }
+
+  btn.classList.remove('loading');
+  btn.textContent = '⚡ Catch a Random Pokémon!';
+}
+</script>
 
 </body>
 </html>
