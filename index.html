@@ -383,7 +383,7 @@ async function fetchRandomPokemon() {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await res.json();
 
-    // Sprite: prefer animated, fallback to static
+    // Sprite: prefer animated (Showdown), fallback to official artwork
     const sprite = data.sprites.other?.showdown?.front_default
       || data.sprites.versions?.['generation-v']?.['black-white']?.animated?.front_default
       || data.sprites.other?.['official-artwork']?.front_default
