@@ -583,8 +583,11 @@ section {
 }
 
 .pokemon-sprite {
-  width: 96px;
-  height: 96px;
+  max-width: 96px;
+  max-height: 96px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   image-rendering: pixelated;
   filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
   transition: transform 0.3s;
