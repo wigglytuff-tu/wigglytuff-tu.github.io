@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XLGoBench: Detecting Cross-lingual Skill Gaps with Algorithmic Tasks</title>
+    <meta name="description" content="XLGoBench: A scalable, transparent benchmark for detecting cross-lingual gaps in LLMs using synthetic algorithmic tasks. EMNLP 2026.">
+    <meta name="author" content="Purvam Jain">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="flattrack.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-name" style="text-decoration: none;">← Purvam Jain</a>
+        <ul class="nav-links">
+            <li><a href="#abstract">Abstract</a></li>
+            <li><a href="#tasks">Tasks</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#citation">Citation</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Banner -->
+<section class="project-hero" id="top">
+    <div class="container">
+        <h1 class="project-title animate-in">XLGoBench: Detecting Cross-lingual Skill Gaps<br>with Algorithmic Tasks</h1>
+
+        <p class="project-authors animate-in">
+            <a href="index.html"><strong>Purvam Jain</strong></a><sup>1</sup>,
+            <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Preethi Jyothi</a><sup>2</sup>,
+            <a href="https://vihari.github.io/" target="_blank">Vihari Piratla</a><sup>1</sup>,
+            <a href="https://scholar.google.com/citations?user=lJcS3LsAAAAJ" target="_blank">Suvrat Raju</a><sup>3</sup>
+        </p>
+
+        <p class="project-affiliations animate-in">
+            <sup>1</sup>Google DeepMind &nbsp;&nbsp;
+            <sup>2</sup>IIT Bombay &nbsp;&nbsp;
+            <sup>3</sup>ICTS-TIFR
+        </p>
+
+        <p class="project-venue animate-in">
+            EMNLP 2026
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="project-actions animate-in">
+            <a href="http://arxiv.org/abs/2605.30788" class="action-btn action-primary" target="_blank">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Paper (arXiv)
+            </a>
+            <a href="https://arxiv.org/pdf/2605.30788" class="action-btn" target="_blank">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Teaser Figure -->
+<section class="project-section">
+    <div class="container">
+        <div class="teaser-img-wrap" style="max-width: 800px; margin: 0 auto;">
+            <img src="imgs/xlgobench.png" alt="XLGoBench task overview showing five algorithmic tasks: Sequential Linear Transforms, Discrete State Automaton, Probabilistic-DSA, Graph Shortest Path, and Tournament Ranking" class="teaser-img">
+        </div>
+        <p class="teaser-caption" style="margin-top: 1.25rem;">
+            <strong>Overview of XLGoBench tasks.</strong> Five synthetic algorithmic tasks — Sequential Linear Transforms (SLT),
+            Discrete State Automaton (DSA), Probabilistic-DSA (Pr-DSA), Graph Shortest Path (Graph SP), and
+            Tournament Ranking (T-Rank) — each with scalable complexity and objective correctness criteria.
+        </p>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Abstract -->
+<section id="abstract" class="project-section">
+    <div class="container">
+        <p class="section-label">Overview</p>
+        <h2 class="section-title">Abstract</h2>
+        <div class="abstract-card">
+            <p class="abstract-text">
+                We introduce a set of <strong>synthetic algorithmic tasks</strong> to detect cross-lingual gaps in the abilities
+                of large language models. Our benchmark is <strong>commensurate</strong> across languages, since it requires
+                models to perform the same underlying task in different languages; <strong>scalable</strong>, since each task
+                can be generated at varying levels of complexity allowing it to be adapted to models with different capabilities;
+                <strong>quantifiable</strong>, since every task admits an objective notion of correctness; and <strong>transparent</strong>,
+                since tasks are generated from simple templates that can be readily audited for translation errors. Because our
+                benchmark focuses on algorithmic tasks, differential performance is a sufficient — but not necessary — indicator
+                of cross-lingual gaps. Nevertheless, we show through extensive experiments that our benchmark <strong>exposes
+                persistent cross-lingual gaps</strong> in multiple state-of-the-art models.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Key Highlights -->
+<section class="project-section">
+    <div class="container">
+        <p class="section-label">At a Glance</p>
+        <h2 class="section-title">Key Highlights</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">🌍</div>
+                <h3 class="highlight-title">Commensurate</h3>
+                <p class="highlight-desc">Same underlying task across languages — differences in performance directly indicate cross-lingual gaps.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">📈</div>
+                <h3 class="highlight-title">Scalable</h3>
+                <p class="highlight-desc">Tasks generated at varying complexity levels, adaptable to models with different capabilities.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">✅</div>
+                <h3 class="highlight-title">Quantifiable</h3>
+                <p class="highlight-desc">Every task admits an objective notion of correctness — no subjective evaluation needed.</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🔍</div>
+                <h3 class="highlight-title">Transparent</h3>
+                <p class="highlight-desc">Simple templates that can be readily audited for translation errors across languages.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Tasks -->
+<section id="tasks" class="project-section">
+    <div class="container">
+        <p class="section-label">Benchmark</p>
+        <h2 class="section-title">Algorithmic Tasks</h2>
+        <div class="method-content">
+            <div class="method-step">
+                <div class="method-number">01</div>
+                <div class="method-info">
+                    <h3 class="method-step-title">Sequential Linear Transforms (SLT)</h3>
+                    <p class="method-step-desc">
+                        A merchant visits cities in sequence, each applying a linear transform to their capital.
+                        The events are shuffled, and the model must reconstruct the chronological order and compute
+                        the final wealth. Tests sequential reasoning and arithmetic over ordered steps.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="method-number">02</div>
+                <div class="method-info">
+                    <h3 class="method-step-title">Discrete State Automaton (DSA)</h3>
+                    <p class="method-step-desc">
+                        Navigate a building with rooms connected by keyed doors. Given a sequence of keys, determine
+                        the final room. Tests the ability to track state transitions through a deterministic automaton.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="method-number">03</div>
+                <div class="method-info">
+                    <h3 class="method-step-title">Probabilistic-DSA (Pr-DSA)</h3>
+                    <p class="method-step-desc">
+                        Extension of DSA where each key leads to one of two rooms with specified probabilities.
+                        The model must list the most probable final rooms, requiring probabilistic reasoning over
+                        state transitions.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="method-number">04</div>
+                <div class="method-info">
+                    <h3 class="method-step-title">Graph Shortest Path (Graph SP)</h3>
+                    <p class="method-step-desc">
+                        Given a social network described by relationships (friends, coworkers, classmates, etc.),
+                        find the shortest chain connecting two people. Tests graph traversal and shortest-path reasoning.
+                    </p>
+                </div>
+            </div>
+            <div class="method-step">
+                <div class="method-number">05</div>
+                <div class="method-info">
+                    <h3 class="method-step-title">Tournament Ranking (T-Rank)</h3>
+                    <p class="method-step-desc">
+                        Given shuffled pairwise match results with transitive redundancy, rank all players from
+                        strongest to weakest. Tests topological sorting and consistent ordering from partial information.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Results -->
+<section id="results" class="project-section">
+    <div class="container">
+        <p class="section-label">Findings</p>
+        <h2 class="section-title">Key Results</h2>
+        <div class="results-content">
+            <div class="result-summary">
+                <p class="abstract-text">
+                    Through extensive experiments across multiple state-of-the-art LLMs, we show that XLGoBench
+                    <strong>exposes persistent cross-lingual gaps</strong> even in frontier models. Performance
+                    consistently degrades when tasks are presented in non-English languages, despite the underlying
+                    algorithmic reasoning being language-independent. The scalable complexity of our tasks allows
+                    fine-grained analysis of <strong>where and how these gaps emerge</strong> as task difficulty increases.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Citation -->
+<section id="citation" class="project-section">
+    <div class="container">
+        <p class="section-label">Reference</p>
+        <h2 class="section-title">Citation</h2>
+        <p class="citation-note">If you find our work useful, please consider citing:</p>
+        <div class="citation-block">
+            <button class="copy-btn" id="copy-btn" onclick="copyBibtex()">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+            </button>
+<pre><code id="bibtex">@inproceedings{jain2026xlgobench,
+  title     = {XLGoBench: Detecting Cross-lingual Skill Gaps
+               with Algorithmic Tasks},
+  author    = {Jain, Purvam and Jyothi, Preethi and Piratla, Vihari
+               and Raju, Suvrat},
+  booktitle = {Proceedings of the 2026 Conference on Empirical Methods
+               in Natural Language Processing (EMNLP)},
+  year      = {2026}
+}</code></pre>
+        </div>
+    </div>
+</section>
+
+<div class="container"><hr class="divider"></div>
+
+<!-- Acknowledgements -->
+<section class="project-section" style="padding-bottom: 2rem;">
+    <div class="container">
+        <p class="section-label">Thanks</p>
+        <h2 class="section-title">Acknowledgements</h2>
+        <p class="abstract-text" style="font-size: 0.88rem;">
+            This work was conducted at Google DeepMind, Bangalore. We thank Partha Talukdar for
+            valuable discussions and support throughout the project.
+        </p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Purvam Jain · <a href="index.html">Back to Homepage</a></p>
+    </div>
+</footer>
+
+<!-- Copy BibTeX Script -->
+<script>
+function copyBibtex() {
+    const bibtex = document.getElementById('bibtex').textContent;
+    navigator.clipboard.writeText(bibtex).then(() => {
+        const btn = document.getElementById('copy-btn');
+        btn.innerHTML = `
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Copied!
+        `;
+        setTimeout(() => {
+            btn.innerHTML = `
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+            `;
+        }, 2000);
+    });
+}
+</script>
+
+</body>
+</html>
