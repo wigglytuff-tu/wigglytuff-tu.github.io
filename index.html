@@ -375,6 +375,19 @@
 </footer>
 <!-- Pokémon Generator Script -->
 <script>
+// Automatically stay up to date with new Pokémon releases via PokéAPI
+let totalPokemonCount = parseInt(localStorage.getItem('poke_count')) || 1025;
+
+fetch('https://pokeapi.co/api/v2/pokemon-species?limit=1')
+  .then(res => res.json())
+  .then(data => {
+    if (data.count && data.count > 0) {
+      totalPokemonCount = data.count;
+      localStorage.setItem('poke_count', data.count);
+    }
+  })
+  .catch(() => {});
+
 async function fetchRandomPokemon() {
   const btn = document.getElementById('pokemon-btn');
   const card = document.getElementById('pokemon-card');
@@ -385,7 +398,7 @@ async function fetchRandomPokemon() {
   btn.textContent = '🔄 Catching...';
 
   try {
-    const id = Math.floor(Math.random() * 898) + 1; // Gen 1–8
+    const id = Math.floor(Math.random() * totalPokemonCount) + 1;
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     const data = await res.json();
 
