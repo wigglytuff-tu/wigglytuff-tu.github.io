@@ -34,9 +34,9 @@
 
         <p class="project-authors animate-in">
             <a href="index.html"><strong>Purvam Jain</strong></a><sup>1</sup>,
-            <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Preethi Jyothi</a><sup>2</sup>,
+            <a href="https://www.cse.iitb.ac.in/~pjyothi/" target="_blank">Preethi Jyothi</a><sup>2,1</sup>,
             <a href="https://vihari.github.io/" target="_blank">Vihari Piratla</a><sup>1</sup>,
-            <a href="https://scholar.google.com/citations?user=lJcS3LsAAAAJ" target="_blank">Suvrat Raju</a><sup>3</sup>
+            <a href="https://scholar.google.com/citations?user=lJcS3LsAAAAJ" target="_blank">Suvrat Raju</a><sup>3,1</sup>
         </p>
 
         <p class="project-affiliations animate-in">
@@ -212,20 +212,86 @@
 
 <div class="container"><hr class="divider"></div>
 
-<!-- Results -->
+<!-- Results & Analysis -->
 <section id="results" class="project-section">
     <div class="container">
-        <p class="section-label">Findings</p>
-        <h2 class="section-title">Key Results</h2>
+        <p class="section-label">Empirical Evaluation</p>
+        <h2 class="section-title">Evaluation & Key Findings</h2>
         <div class="results-content">
             <div class="result-summary">
                 <p class="abstract-text">
-                    Through extensive experiments across multiple state-of-the-art LLMs, we show that XLGoBench
-                    <strong>exposes persistent cross-lingual gaps</strong> even in frontier models. Performance
-                    consistently degrades when tasks are presented in non-English languages, despite the underlying
-                    algorithmic reasoning being language-independent. The scalable complexity of our tasks allows
-                    fine-grained analysis of <strong>where and how these gaps emerge</strong> as task difficulty increases.
+                    We evaluate <strong>six frontier models</strong> across all five algorithmic puzzles in <strong>seven languages</strong>
+                    (English, Arabic, Hindi, Japanese, Chinese, Tamil, and Telugu), comprising ~<strong>140,000 prompts</strong> sampled
+                    across 20 complexity levels.
                 </p>
+            </div>
+
+            <!-- Evaluated Models Grid -->
+            <div class="highlights-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 1rem;">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🤖</div>
+                    <h3 class="highlight-title">Gemini-3-Flash & 3.1 Flash-Lite</h3>
+                    <p class="highlight-desc">Google DeepMind frontier multimodal models evaluated across full complexity spectra.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">💎</div>
+                    <h3 class="highlight-title">Gemma-4-31B-IT</h3>
+                    <p class="highlight-desc">Demonstrates the <strong>smallest cross-lingual gaps</strong> on average across evaluated tasks.</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🌐</div>
+                    <h3 class="highlight-title">GLM-5.1, Sarvam-105B & DeepSeek-V4-Pro</h3>
+                    <p class="highlight-desc">Evaluates diverse open and proprietary architectures developed globally.</p>
+                </div>
+            </div>
+
+            <!-- Key Takeaways -->
+            <div class="method-content" style="margin-top: 1.5rem;">
+                <div class="method-step">
+                    <div class="method-number">📉</div>
+                    <div class="method-info">
+                        <h3 class="method-step-title">Gaps Emerge at Intermediate Complexity</h3>
+                        <p class="method-step-desc">
+                            At low complexity, all models achieve near-100% accuracy across all languages. At high complexity,
+                            accuracy drops to near-0% for all languages. <strong>Cross-lingual reasoning gaps appear specifically in
+                            the intermediate complexity regime</strong>. Static benchmarks that test at a single difficulty level can
+                            completely miss these disparities.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="method-number">🧠</div>
+                    <div class="method-info">
+                        <h3 class="method-step-title">Thinking Budget Does Not Explain the Gap</h3>
+                        <p class="method-step-desc">
+                            Analyzing thinking trace lengths reveals that cross-lingual gaps <strong>are not correlated with thinking effort</strong>
+                            (18 of 20 model-task pairs show Spearman rank correlation &rho; statistically indistinguishable from zero).
+                            Models cannot close cross-lingual reasoning deficits merely by allocating more test-time thinking tokens.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="method-number">💬</div>
+                    <div class="method-info">
+                        <h3 class="method-step-title">The "Quote and Think" Phenomenon</h3>
+                        <p class="method-step-desc">
+                            Examination of reasoning traces shows models frequently quote prompt fragments in the non-English target
+                            language but then transition to thinking in English. Cross-attention between English thinking tokens and
+                            non-English prompt tokens may contribute to accelerated degradation in non-English performance.
+                        </p>
+                    </div>
+                </div>
+                <div class="method-step">
+                    <div class="method-number">📐</div>
+                    <div class="method-info">
+                        <h3 class="method-step-title">Signed Max Divergence (SMD) Metric</h3>
+                        <p class="method-step-desc">
+                            We model the decline of accuracy with complexity using an incomplete gamma function (R<sup>2</sup> &gt; 0.97).
+                            The <strong>Signed Max Divergence (SMD)</strong> captures the worst-case cross-lingual gap at the peak divergence
+                            point, providing a rigorous, single-number summary of language disparity.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -265,8 +331,11 @@
         <p class="section-label">Thanks</p>
         <h2 class="section-title">Acknowledgements</h2>
         <p class="abstract-text" style="font-size: 0.88rem;">
-            This work was conducted at Google DeepMind, Bangalore. We thank Partha Talukdar for
-            valuable discussions and support throughout the project.
+            We are grateful to Kinshuk Vasisht for collaboration on related work, which was a precursor to this study.
+            We thank Jason Hickey and Katja Filippova for comments on a draft of this manuscript.
+            We would like to thank Partha Talukdar, Markus Freitag, Vijai Mohan, Jan-Thorsten Peter, David Vilar Torres,
+            Dan Deutsch, and Mara Finkelstein for valuable discussions regarding the benchmark.
+            We also thank Dinesh Tewari and Eric Baum for help in setting up the human verification of prompt templates.
         </p>
     </div>
 </section>
